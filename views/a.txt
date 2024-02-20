@@ -1,0 +1,7 @@
+  <td>
+    <% if (DBofEmp.image) { %>
+        <img src="<%= DBofEmp.image %>" alt="Employee Photo" style="max-width: 100px;">
+    <% } else { %>
+        No Photo Available
+    <% } %>
+  </td>

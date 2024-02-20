@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+<h1 class="text-center"><u>Enter Employee Information</u></h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data" class="text-center">
+        <input type="text" name="name" placeholder="Enter Employee Name">
+        <input type="text" name="age" placeholder="Enter Employee Age">
+        <input type="file" name="image" id="myFile" name="image">
+        <input type="submit" class="btn btn-warning">
+      </form>
+
+      <br>
+      <br>
+      <br> 
+     
+
+<h1 class="text-center"><u>Employee Data</u></h1>
+
+<% if (DBofEmp != "") { %>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Employee Name</th>
+            <th>Employee Age</th>
+            <th>Employee Photo</th>
+        </tr>
+    </thead>    
+        <% DBofEmp.forEach((DBofEmp,index) => { %>
+        <tr>
+            <td><%= index + 1 %></td>
+            <td><%= DBofEmp.name %></td>
+            <td><%= DBofEmp.age %></td>
+        </tr>
+       <% }) %>
+</table>
+<% } %>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+</body>
+</html>
